@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { Search } from 'lucide-react';
+import './App.css';
+import 'tailwindcss';
+import SearchBox from './components/SearchBox';
+import AppButton from './components/AppButton';
+import SortBtn from './components/SortBtn';
+import DropdownMenu from './components/DropdownMenu';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <>
+            <div className="bg-gray-200 p-5 rounded-lg">
+                <h1 className="text-black font-bold my-5">
+                    Chlart Task Manager
+                </h1>
+                <div className='flex flex-col gap-5 items-center'>
+                  <SearchBox />
+                  <div className='flex justify-center gap-5'>
+                    <AppButton label="Add new task"/>
+                    <SortBtn />
+                  </div>
+                </div>
+                <div className='flex flex-col gap-5 bg-gray-50 p-5 rounded-lg'>
+                  <h2 className="text-black font-bold my-5 flex text-4xl">
+                      Your task
+                  </h2>
+                  <div className='w-full bg-black rounded-lg p-2 text-white flex justify-between'>
+                    <div>
+                      <h3 className='text-2xl'>Task 1</h3>
+                      <DropdownMenu />
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </>
+    );
 }
 
-export default App
+export default App;
