@@ -24,10 +24,10 @@ function SortBtn() {
                 </summary>
                 <ul className="font-medium bg-[#1a1a1a] border-2 border-white menu dropdown-content rounded-box z-[1] w-[155px] p-2 shadow-lg text-white">
                     <li>
-                        <a onClick={() => handleSelection('Date')}>Date</a>
+                        <a onClick={() => handleSelection('Date')}><p className="text-[#def]">Date</p></a>
                     </li>
                     <li>
-                        <a onClick={() => handleSelection('Name')}>Name</a>
+                        <a onClick={() => handleSelection('Name')}><p className='text-[#def]'>Name</p></a>
                     </li>
                 </ul>
             </details>
